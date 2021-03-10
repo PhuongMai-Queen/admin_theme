@@ -5,7 +5,7 @@ import Router from 'vue-router'
 const TheContainer = () => import('@/containers/TheContainer')
 
 // Views
-const Dashboard = () => import('@/views/Dashboard')
+// const Dashboard = () => import('@/views/Dashboard')
 
 const Colors = () => import('@/views/theme/Colors')
 const Typography = () => import('@/views/theme/Typography')
@@ -57,6 +57,25 @@ const Register = () => import('@/views/pages/Register')
 const Users = () => import('@/views/users/Users')
 const User = () => import('@/views/users/User')
 
+// Custom----------------------------------------------
+// Tổng quan
+const Dashboard = () => import('@/views/Dashboard')
+
+//Đơn hàng
+const AllOrders = () => import('@/views/orders/AllOrders')
+const NewOrder = () => import('@/views/orders/Create')
+
+//Vận chuyển
+const Transport = () => import('@/views/transport/Transport')
+
+//Khuyến mãi
+const Discount = () => import('@/views/discount/Discount')
+
+//Sản phẩm
+const AllProducts = () => import('@/views/products/AllProducts')
+const ProductGroups = () => import('@/views/products/ProductGroups')
+const Inventory = () => import('@/views/products/Inventory')
+
 Vue.use(Router)
 
 export default new Router({
@@ -71,12 +90,12 @@ function configRoutes () {
     {
       path: '/',
       redirect: '/dashboard',
-      name: 'Home',
+      name: 'Trang chủ',
       component: TheContainer,
       children: [
         {
           path: 'dashboard',
-          name: 'Dashboard',
+          name: 'Tổng quan',
           component: Dashboard
         },
         {
@@ -112,7 +131,7 @@ function configRoutes () {
         {
           path: 'users',
           meta: {
-            label: 'Users'
+            label: 'Khách hàng'
           },
           component: {
             render(c) {
@@ -122,13 +141,13 @@ function configRoutes () {
           children: [
             {
               path: '',
-              name: 'Users',
+              name: 'Tất cả khách hàng',
               component: Users
             },
             {
               path: ':id',
               meta: {
-                label: 'User Details'
+                label: 'Chi tiết khách hàng'
               },
               name: 'User',
               component: User
@@ -252,7 +271,7 @@ function configRoutes () {
               path: 'brand-buttons',
               name: 'Brand Buttons',
               component: BrandButtons
-            }
+            },
           ]
         },
         {
@@ -304,7 +323,62 @@ function configRoutes () {
               component: Modals
             }
           ]
-        }
+        },
+        {
+          path: 'orders',
+          redirect: '/orders/all_orders',
+          name: 'Đơn hàng',
+          component: {
+            render (c) { return c('router-view') }
+          },
+          children: [
+            {
+              path: '/orders/all_orders',
+              name: 'Tất cả đơn hàng',
+              component: AllOrders
+            },
+            {
+              path: '/orders/create',
+              name: 'Tạo đơn hàng',
+              component: NewOrder
+            }
+          ]
+        },
+        {
+          path: '/transport',
+          name: 'Vận chuyển',
+          component: Transport
+        },
+        {
+          path: '/discount',
+          name: 'Khuyến mãi',
+          component: Discount
+        },
+        {
+          path: 'products',
+          redirect: '/products/all_products',
+          name: 'Sản phẩm',
+          component: {
+            render (c) { return c('router-view') }
+          },
+          children: [
+            {
+              path: '/products/all_products',
+              name: 'Tất cả sản phẩm',
+              component: AllProducts
+            },
+            {
+              path: '/products/product_groups',
+              name: 'Nhóm sản phẩm',
+              component: ProductGroups
+            },
+            {
+              path: '/products/inventory',
+              name: 'Tồn kho',
+              component: Inventory
+            }
+          ]
+        },
       ]
     },
     {
