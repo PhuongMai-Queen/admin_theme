@@ -16,7 +16,19 @@ export default [
         items: [
           {
             name: 'Tất cả đơn hàng',
-            to: '/orders/all_orders'
+            to: '/orders/all'
+          },
+          {
+            name: 'Đơn hàng mới',
+            to: '/orders/new'
+          },
+          {
+            name: 'Chưa giao hàng',
+            to: '/orders/not_yet_shipped'
+          },
+          {
+            name: 'Chưa thanh toán',
+            to: '/orders/unpaid'
           },
           {
             name: 'Tạo đơn hàng',
@@ -25,10 +37,30 @@ export default [
         ]
       },
       {
-        _name: 'CSidebarNavItem',
+        _name: 'CSidebarNavDropdown',
         name: 'Vận chuyển',
-        to: '/transport',
+        route: '/transport',
+        // to: '/transport',
         icon: 'cil-cursor',
+        items: [
+          {
+            name: 'Tất cả phiếu giao hàng',
+            to: '/transport/all'
+          },
+          {
+            name: 'Chờ lấy hàng',
+            to: '/transport/ready'
+          },
+          {
+            name: 'Đang giao',
+            to: '/transport/in_process'
+          },
+          {
+            name: 'Đã giao',
+            to: '/transport/completed'
+          }
+        ]
+
 
       },
       {
@@ -52,10 +84,21 @@ export default [
         ]
       },
       {
-        _name: 'CSidebarNavItem',
+        _name: 'CSidebarNavDropdown',
         name: 'Khách hàng',
-        to: '/users',
+        route: '/customers',
         icon: 'cil-puzzle',
+        items: [
+          {
+            name: 'Danh sách khách hàng',
+            to: '/customers/list'
+          },
+          {
+            name: 'Tạo khách hàng',
+            to: '/customers/create'
+          }
+        ]
+
       },
       {
         _name: 'CSidebarNavItem',

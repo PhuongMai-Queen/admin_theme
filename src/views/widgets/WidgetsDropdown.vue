@@ -1,7 +1,7 @@
 <template>
   <CRow>
     <CCol sm="6" lg="3">
-      <CWidgetDropdown color="primary" header="9.823" text="Members online">
+      <CWidgetDropdown color="primary" :header="total_products" text="Sản phẩm">
         <template #default>
           <CDropdown
             color="transparent p-0"
@@ -30,7 +30,7 @@
       </CWidgetDropdown>
     </CCol>
     <CCol sm="6" lg="3">
-      <CWidgetDropdown color="info" header="9.823" text="Members online">
+      <CWidgetDropdown color="info" header="0" text="Đơn hàng">
         <template #default>
           <CDropdown
             color="transparent p-0"
@@ -63,8 +63,8 @@
     <CCol sm="6" lg="3">
       <CWidgetDropdown
         color="warning"
-        header="9.823"
-        text="Members online"
+        header="0"
+        text="Khách hàng"
       >
         <template #default>
           <CDropdown
@@ -97,8 +97,8 @@
     <CCol sm="6" lg="3">
       <CWidgetDropdown
         color="danger"
-        header="9.823"
-        text="Members online"
+        header="0"
+        text="Bình luận"
       >
         <template #default>
           <CDropdown
@@ -130,9 +130,24 @@
 
 <script>
 import { CChartLineSimple, CChartBarSimple } from '../charts/index.js'
+import axios from "axios";
 
 export default {
   name: 'WidgetsDropdown',
-  components: { CChartLineSimple, CChartBarSimple }
+  components: { CChartLineSimple, CChartBarSimple },
+  data () {
+    return {
+      total_products: ''
+    }
+  },
+  mounted () {
+    axios
+        .get('http://api.tvtp.vn/v0/products',{
+          headers: {
+            Authorization: 'Bearer cb68e963404f0b1b62229f37cf77013b7f97729b6722ae7d17e8315e9eabcbe3'
+          }
+        })
+        .then(response => (this.total_products  = response.data.meta.pagination['total']))
+  }
 }
 </script>

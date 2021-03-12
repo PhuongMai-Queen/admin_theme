@@ -62,19 +62,32 @@ const User = () => import('@/views/users/User')
 const Dashboard = () => import('@/views/Dashboard')
 
 //Đơn hàng
-const AllOrders = () => import('@/views/orders/AllOrders')
-const NewOrder = () => import('@/views/orders/Create')
+const Order = () => import('@/views/orders/All')
+const New = () => import('@/views/orders/New')
+const NotYetShipped = () => import('@/views/orders/NotYetShipped')
+const Unpaid = () => import('@/views/orders/Unpaid')
+const CreateOrder = () => import('@/views/orders/Create')
 
 //Vận chuyển
-const Transport = () => import('@/views/transport/Transport')
+const Transport = () => import('@/views/transport/All')
+const Ready = () => import('@/views/transport/Ready')
+const InProcess = () => import('@/views/transport/InProcess')
+const Completed = () => import('@/views/transport/Completed')
 
 //Khuyến mãi
 const Discount = () => import('@/views/discount/Discount')
 
 //Sản phẩm
 const AllProducts = () => import('@/views/products/AllProducts')
-const ProductGroups = () => import('@/views/products/ProductGroups')
+const ProductGroups = () => import('@/views/products/ProductGroups/ProductGroups')
+const CreateProductGroups = () => import('@/views/products/ProductGroups/CreateProductGroups')
 const Inventory = () => import('@/views/products/Inventory')
+const CreateProducts = () => import('@/views/products/CreateProducts')
+
+//Khách hàng
+const Customer = () => import('@/views/customers/List')
+const CreateCustomer = () => import('@/views/customers/Create')
+
 
 Vue.use(Router)
 
@@ -99,34 +112,9 @@ function configRoutes () {
           component: Dashboard
         },
         {
-          path: 'theme',
-          redirect: '/theme/colors',
-          name: 'Theme',
-          component: {
-            render (c) { return c('router-view') }
-          },
-          children: [
-            {
-              path: 'colors',
-              name: 'Colors',
-              component: Colors
-            },
-            {
-              path: 'typography',
-              name: 'Typography',
-              component: Typography
-            }
-          ]
-        },
-        {
           path: 'charts',
           name: 'Charts',
           component: Charts
-        },
-        {
-          path: 'widgets',
-          name: 'Widgets',
-          component: Widgets
         },
         {
           path: 'users',
@@ -155,199 +143,70 @@ function configRoutes () {
           ]
         },
         {
-          path: 'base',
-          redirect: '/base/cards',
-          name: 'Base',
-          component: {
-            render (c) { return c('router-view') }
-          },
-          children: [
-            {
-              path: 'cards',
-              name: 'Cards',
-              component: Cards
-            },
-            {
-              path: 'forms',
-              name: 'Forms',
-              component: Forms
-            },
-            {
-              path: 'switches',
-              name: 'Switches',
-              component: Switches
-            },
-            {
-              path: 'tables',
-              name: 'Tables',
-              component: Tables
-            },
-            {
-              path: 'tabs',
-              name: 'Tabs',
-              component: Tabs
-            },
-            {
-              path: 'breadcrumbs',
-              name: 'Breadcrumbs',
-              component: Breadcrumbs
-            },
-            {
-              path: 'carousels',
-              name: 'Carousels',
-              component: Carousels
-            },
-            {
-              path: 'collapses',
-              name: 'Collapses',
-              component: Collapses
-            },
-            {
-              path: 'jumbotrons',
-              name: 'Jumbotrons',
-              component: Jumbotrons
-            },
-            {
-              path: 'list-groups',
-              name: 'List Groups',
-              component: ListGroups
-            },
-            {
-              path: 'navs',
-              name: 'Navs',
-              component: Navs
-            },
-            {
-              path: 'navbars',
-              name: 'Navbars',
-              component: Navbars
-            },
-            {
-              path: 'paginations',
-              name: 'Paginations',
-              component: Paginations
-            },
-            {
-              path: 'popovers',
-              name: 'Popovers',
-              component: Popovers
-            },
-            {
-              path: 'progress-bars',
-              name: 'Progress Bars',
-              component: ProgressBars
-            },
-            {
-              path: 'tooltips',
-              name: 'Tooltips',
-              component: Tooltips
-            }
-          ]
-        },
-        {
-          path: 'buttons',
-          redirect: '/buttons/standard-buttons',
-          name: 'Buttons',
-          component: {
-            render (c) { return c('router-view') }
-          },
-          children: [
-            {
-              path: 'standard-buttons',
-              name: 'Standard Buttons',
-              component: StandardButtons
-            },
-            {
-              path: 'button-groups',
-              name: 'Button Groups',
-              component: ButtonGroups
-            },
-            {
-              path: 'dropdowns',
-              name: 'Dropdowns',
-              component: Dropdowns
-            },
-            {
-              path: 'brand-buttons',
-              name: 'Brand Buttons',
-              component: BrandButtons
-            },
-          ]
-        },
-        {
-          path: 'icons',
-          redirect: '/icons/coreui-icons',
-          name: 'CoreUI Icons',
-          component: {
-            render (c) { return c('router-view') }
-          },
-          children: [
-            {
-              path: 'coreui-icons',
-              name: 'Icons library',
-              component: CoreUIIcons
-            },
-            {
-              path: 'brands',
-              name: 'Brands',
-              component: Brands
-            },
-            {
-              path: 'flags',
-              name: 'Flags',
-              component: Flags
-            }
-          ]
-        },
-        {
-          path: 'notifications',
-          redirect: '/notifications/alerts',
-          name: 'Notifications',
-          component: {
-            render (c) { return c('router-view') }
-          },
-          children: [
-            {
-              path: 'alerts',
-              name: 'Alerts',
-              component: Alerts
-            },
-            {
-              path: 'badges',
-              name: 'Badges',
-              component: Badges
-            },
-            {
-              path: 'modals',
-              name: 'Modals',
-              component: Modals
-            }
-          ]
-        },
-        {
           path: 'orders',
-          redirect: '/orders/all_orders',
+          redirect: '/orders/all',
           name: 'Đơn hàng',
           component: {
             render (c) { return c('router-view') }
           },
           children: [
             {
-              path: '/orders/all_orders',
+              path: '/orders/all',
               name: 'Tất cả đơn hàng',
-              component: AllOrders
+              component: Order
+            },
+            {
+              path: '/orders/new',
+              name: 'Đơn hàng mới',
+              component: New
+            },
+            {
+              path: '/orders/not_yet_shipped',
+              name: 'Chưa giao hàng',
+              component: NotYetShipped
+            },
+            {
+              path: '/orders/unpaid',
+              name: 'Chưa thanh toán',
+              component: Unpaid
             },
             {
               path: '/orders/create',
               name: 'Tạo đơn hàng',
-              component: NewOrder
+              component: CreateOrder
             }
           ]
         },
         {
-          path: '/transport',
+          path: 'transport',
+          redirect: '/transport/all',
           name: 'Vận chuyển',
-          component: Transport
+          component: {
+            render (c) { return c('router-view') }
+          },
+          children: [
+            {
+              path: '/transport/all',
+              name: 'Tất cả đơn hàng',
+              component: Transport
+            },
+            {
+              path: '/transport/ready',
+              name: 'Chờ lấy hàng',
+              component: Ready
+            },
+            {
+              path: '/transport/in_process',
+              name: 'Đang giao',
+              component: InProcess
+            },
+            {
+              path: '/transport/completed',
+              name: 'Đã giao',
+              component: Completed
+            }
+          ]
+
         },
         {
           path: '/discount',
@@ -373,9 +232,39 @@ function configRoutes () {
               component: ProductGroups
             },
             {
+              path: '/products/product_groups/create_product_groups',
+              name: 'Tạo nhóm sản phẩm',
+              component: CreateProductGroups
+            },
+            {
               path: '/products/inventory',
               name: 'Tồn kho',
               component: Inventory
+            },
+            {
+              path: '/products/create_products',
+              name: 'Tạo sản phẩm',
+              component: CreateProducts
+            }
+          ]
+        },
+        {
+          path: 'customers',
+          redirect: '/customers/list',
+          name: 'Khách hàng',
+          component: {
+            render (c) { return c('router-view') }
+          },
+          children: [
+            {
+              path: '/customers/list',
+              name: 'Danh sách khách hàng',
+              component: Customer
+            },
+            {
+              path: '/customers/create',
+              name: 'Tạo khách hàng',
+              component: CreateCustomer
             }
           ]
         },
