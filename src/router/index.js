@@ -62,11 +62,17 @@ const User = () => import('@/views/users/User')
 const Dashboard = () => import('@/views/Dashboard')
 
 //Đơn hàng
-const AllOrders = () => import('@/views/orders/AllOrders')
-const NewOrder = () => import('@/views/orders/Create')
+const Order = () => import('@/views/orders/All')
+const New = () => import('@/views/orders/New')
+const NotYetShipped = () => import('@/views/orders/NotYetShipped')
+const Unpaid = () => import('@/views/orders/Unpaid')
+const CreateOrder = () => import('@/views/orders/Create')
 
 //Vận chuyển
-const Transport = () => import('@/views/transport/Transport')
+const Transport = () => import('@/views/transport/All')
+const Ready = () => import('@/views/transport/Ready')
+const InProcess = () => import('@/views/transport/InProcess')
+const Completed = () => import('@/views/transport/Completed')
 
 //Khuyến mãi
 const Discount = () => import('@/views/discount/Discount')
@@ -75,6 +81,11 @@ const Discount = () => import('@/views/discount/Discount')
 const AllProducts = () => import('@/views/products/AllProducts')
 const ProductGroups = () => import('@/views/products/ProductGroups')
 const Inventory = () => import('@/views/products/Inventory')
+
+//Khách hàng
+const Customer = () => import('@/views/customers/List')
+const CreateCustomer = () => import('@/views/customers/Create')
+
 
 Vue.use(Router)
 
@@ -326,28 +337,69 @@ function configRoutes () {
         },
         {
           path: 'orders',
-          redirect: '/orders/all_orders',
+          redirect: '/orders/all',
           name: 'Đơn hàng',
           component: {
             render (c) { return c('router-view') }
           },
           children: [
             {
-              path: '/orders/all_orders',
+              path: '/orders/all',
               name: 'Tất cả đơn hàng',
-              component: AllOrders
+              component: Order
+            },
+            {
+              path: '/orders/new',
+              name: 'Đơn hàng mới',
+              component: New
+            },
+            {
+              path: '/orders/not_yet_shipped',
+              name: 'Chưa giao hàng',
+              component: NotYetShipped
+            },
+            {
+              path: '/orders/unpaid',
+              name: 'Chưa thanh toán',
+              component: Unpaid
             },
             {
               path: '/orders/create',
               name: 'Tạo đơn hàng',
-              component: NewOrder
+              component: CreateOrder
             }
           ]
         },
         {
-          path: '/transport',
+          path: 'transport',
+          redirect: '/transport/all',
           name: 'Vận chuyển',
-          component: Transport
+          component: {
+            render (c) { return c('router-view') }
+          },
+          children: [
+            {
+              path: '/transport/all',
+              name: 'Tất cả đơn hàng',
+              component: Transport
+            },
+            {
+              path: '/transport/ready',
+              name: 'Chờ lấy hàng',
+              component: Ready
+            },
+            {
+              path: '/transport/in_process',
+              name: 'Đang giao',
+              component: InProcess
+            },
+            {
+              path: '/transport/completed',
+              name: 'Đã giao',
+              component: Completed
+            }
+          ]
+
         },
         {
           path: '/discount',
@@ -376,6 +428,26 @@ function configRoutes () {
               path: '/products/inventory',
               name: 'Tồn kho',
               component: Inventory
+            }
+          ]
+        },
+        {
+          path: 'customers',
+          redirect: '/customers/list',
+          name: 'Khách hàng',
+          component: {
+            render (c) { return c('router-view') }
+          },
+          children: [
+            {
+              path: '/customers/list',
+              name: 'Danh sách khách hàng',
+              component: Customer
+            },
+            {
+              path: '/customers/create',
+              name: 'Tạo khách hàng',
+              component: CreateCustomer
             }
           ]
         },
