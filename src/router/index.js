@@ -79,8 +79,10 @@ const Discount = () => import('@/views/discount/Discount')
 
 //Sản phẩm
 const AllProducts = () => import('@/views/products/AllProducts')
-const ProductGroups = () => import('@/views/products/ProductGroups')
+const ProductGroups = () => import('@/views/products/ProductGroups/ProductGroups')
+const CreateProductGroups = () => import('@/views/products/ProductGroups/CreateProductGroups')
 const Inventory = () => import('@/views/products/Inventory')
+const CreateProducts = () => import('@/views/products/CreateProducts')
 
 //Khách hàng
 const Customer = () => import('@/views/customers/List')
@@ -110,34 +112,9 @@ function configRoutes () {
           component: Dashboard
         },
         {
-          path: 'theme',
-          redirect: '/theme/colors',
-          name: 'Theme',
-          component: {
-            render (c) { return c('router-view') }
-          },
-          children: [
-            {
-              path: 'colors',
-              name: 'Colors',
-              component: Colors
-            },
-            {
-              path: 'typography',
-              name: 'Typography',
-              component: Typography
-            }
-          ]
-        },
-        {
           path: 'charts',
           name: 'Charts',
           component: Charts
-        },
-        {
-          path: 'widgets',
-          name: 'Widgets',
-          component: Widgets
         },
         {
           path: 'users',
@@ -162,176 +139,6 @@ function configRoutes () {
               },
               name: 'User',
               component: User
-            }
-          ]
-        },
-        {
-          path: 'base',
-          redirect: '/base/cards',
-          name: 'Base',
-          component: {
-            render (c) { return c('router-view') }
-          },
-          children: [
-            {
-              path: 'cards',
-              name: 'Cards',
-              component: Cards
-            },
-            {
-              path: 'forms',
-              name: 'Forms',
-              component: Forms
-            },
-            {
-              path: 'switches',
-              name: 'Switches',
-              component: Switches
-            },
-            {
-              path: 'tables',
-              name: 'Tables',
-              component: Tables
-            },
-            {
-              path: 'tabs',
-              name: 'Tabs',
-              component: Tabs
-            },
-            {
-              path: 'breadcrumbs',
-              name: 'Breadcrumbs',
-              component: Breadcrumbs
-            },
-            {
-              path: 'carousels',
-              name: 'Carousels',
-              component: Carousels
-            },
-            {
-              path: 'collapses',
-              name: 'Collapses',
-              component: Collapses
-            },
-            {
-              path: 'jumbotrons',
-              name: 'Jumbotrons',
-              component: Jumbotrons
-            },
-            {
-              path: 'list-groups',
-              name: 'List Groups',
-              component: ListGroups
-            },
-            {
-              path: 'navs',
-              name: 'Navs',
-              component: Navs
-            },
-            {
-              path: 'navbars',
-              name: 'Navbars',
-              component: Navbars
-            },
-            {
-              path: 'paginations',
-              name: 'Paginations',
-              component: Paginations
-            },
-            {
-              path: 'popovers',
-              name: 'Popovers',
-              component: Popovers
-            },
-            {
-              path: 'progress-bars',
-              name: 'Progress Bars',
-              component: ProgressBars
-            },
-            {
-              path: 'tooltips',
-              name: 'Tooltips',
-              component: Tooltips
-            }
-          ]
-        },
-        {
-          path: 'buttons',
-          redirect: '/buttons/standard-buttons',
-          name: 'Buttons',
-          component: {
-            render (c) { return c('router-view') }
-          },
-          children: [
-            {
-              path: 'standard-buttons',
-              name: 'Standard Buttons',
-              component: StandardButtons
-            },
-            {
-              path: 'button-groups',
-              name: 'Button Groups',
-              component: ButtonGroups
-            },
-            {
-              path: 'dropdowns',
-              name: 'Dropdowns',
-              component: Dropdowns
-            },
-            {
-              path: 'brand-buttons',
-              name: 'Brand Buttons',
-              component: BrandButtons
-            },
-          ]
-        },
-        {
-          path: 'icons',
-          redirect: '/icons/coreui-icons',
-          name: 'CoreUI Icons',
-          component: {
-            render (c) { return c('router-view') }
-          },
-          children: [
-            {
-              path: 'coreui-icons',
-              name: 'Icons library',
-              component: CoreUIIcons
-            },
-            {
-              path: 'brands',
-              name: 'Brands',
-              component: Brands
-            },
-            {
-              path: 'flags',
-              name: 'Flags',
-              component: Flags
-            }
-          ]
-        },
-        {
-          path: 'notifications',
-          redirect: '/notifications/alerts',
-          name: 'Notifications',
-          component: {
-            render (c) { return c('router-view') }
-          },
-          children: [
-            {
-              path: 'alerts',
-              name: 'Alerts',
-              component: Alerts
-            },
-            {
-              path: 'badges',
-              name: 'Badges',
-              component: Badges
-            },
-            {
-              path: 'modals',
-              name: 'Modals',
-              component: Modals
             }
           ]
         },
@@ -425,9 +232,19 @@ function configRoutes () {
               component: ProductGroups
             },
             {
+              path: '/products/product_groups/create_product_groups',
+              name: 'Tạo nhóm sản phẩm',
+              component: CreateProductGroups
+            },
+            {
               path: '/products/inventory',
               name: 'Tồn kho',
               component: Inventory
+            },
+            {
+              path: '/products/create_products',
+              name: 'Tạo sản phẩm',
+              component: CreateProducts
             }
           ]
         },

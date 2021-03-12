@@ -5,8 +5,8 @@
       <CCardBody>
         <CRow>
           <CCol sm="5">
-            <h4 id="traffic" class="card-title mb-0">Traffic</h4>
-            <div class="small text-muted">November 2017</div>
+            <h4 id="traffic" class="card-title mb-0">Lưu lượng truy cập</h4>
+            <div class="small text-muted">March 2021</div>
           </CCol>
           <CCol sm="7" class="d-none d-md-block">
             <CButton color="primary" class="float-right">
@@ -31,7 +31,7 @@
       <CCardFooter>
         <CRow class="text-center">
           <CCol md sm="12" class="mb-sm-2 mb-0">
-            <div class="text-muted">Visits</div>
+            <div class="text-muted">Lượt truy cập</div>
             <strong>29.703 Users (40%)</strong>
             <CProgress
               class="progress-xs mt-2"
@@ -41,7 +41,7 @@
             />
           </CCol>
           <CCol md sm="12" class="mb-sm-2 mb-0 d-md-down-none">
-            <div class="text-muted">Unique</div>
+            <div class="text-muted">Lượt tìm kiếm</div>
             <strong>24.093 Users (20%)</strong>
             <CProgress
               class="progress-xs mt-2"
@@ -51,7 +51,7 @@
             />
           </CCol>
           <CCol md sm="12" class="mb-sm-2 mb-0">
-            <div class="text-muted">Pageviews</div>
+            <div class="text-muted">Số lượt xem</div>
             <strong>78.706 Views (60%)</strong>
             <CProgress
               class="progress-xs mt-2"
@@ -61,7 +61,7 @@
             />
           </CCol>
           <CCol md sm="12" class="mb-sm-2 mb-0">
-            <div class="text-muted">New Users</div>
+            <div class="text-muted">Người dùng mới</div>
             <strong>22.123 Users (80%)</strong>
             <CProgress
               class="progress-xs mt-2"
@@ -71,7 +71,7 @@
             />
           </CCol>
           <CCol md sm="12" class="mb-sm-2 mb-0 d-md-down-none">
-            <div class="text-muted">Bounce Rate</div>
+            <div class="text-muted">Tỷ lệ thoát</div>
             <strong>Average Rate (40.15%)</strong>
             <CProgress
               class="progress-xs mt-2"
@@ -87,7 +87,7 @@
       <CCol md="12">
         <CCard>
           <CCardHeader>
-            Traffic &amp; Sales
+            Lưu lượng truy cập và bán hàng
           </CCardHeader>
           <CCardBody>
             <CRow>
@@ -95,13 +95,13 @@
                 <CRow>
                   <CCol sm="6">
                     <CCallout color="info">
-                      <small class="text-muted">New Clients</small><br>
+                      <small class="text-muted">Khách hàng mới</small><br>
                       <strong class="h4">9,123</strong>
                     </CCallout>
                   </CCol>
                   <CCol sm="6">
                     <CCallout color="danger">
-                      <small class="text-muted">Recurring Clients</small><br>
+                      <small class="text-muted">Khách hàng định kỳ</small><br>
                       <strong class="h4">22,643</strong>
                     </CCallout>
                   </CCol>
@@ -110,7 +110,7 @@
                 <div class="progress-group mb-4">
                   <div class="progress-group-prepend">
                     <span class="progress-group-text">
-                      Monday
+                      Thứ 2
                     </span>
                   </div>
                   <div class="progress-group-bars">
@@ -129,7 +129,7 @@
                 <div class="progress-group mb-4">
                   <div class="progress-group-prepend">
                     <span class="progress-group-text">
-                      Tuesday
+                      Thứ 3
                     </span>
                   </div>
                   <div class="progress-group-bars">
@@ -148,7 +148,7 @@
                 <div class="progress-group mb-4">
                   <div class="progress-group-prepend">
                     <span class="progress-group-text">
-                      Wednesday
+                      Thứ 4
                     </span>
                   </div>
                   <div class="progress-group-bars">
@@ -167,7 +167,7 @@
                 <div class="progress-group mb-4">
                   <div class="progress-group-prepend">
                     <span class="progress-group-text">
-                      Thursday
+                      Thứ 5
                     </span>
                   </div>
                   <div class="progress-group-bars">
@@ -186,7 +186,7 @@
                 <div class="progress-group mb-4">
                   <div class="progress-group-prepend">
                     <span class="progress-group-text">
-                      Friday
+                      Thứ 6
                     </span>
                   </div>
                   <div class="progress-group-bars">
@@ -205,7 +205,7 @@
                 <div class="progress-group mb-4">
                   <div class="progress-group-prepend">
                     <span class="progress-group-text">
-                      Saturday
+                      Thứ 7
                     </span>
                   </div>
                   <div class="progress-group-bars">
@@ -224,7 +224,7 @@
                 <div class="progress-group mb-4">
                   <div class="progress-group-prepend">
                     <span class="progress-group-text">
-                      Sunday
+                      Chủ nhật
                     </span>
                   </div>
                   <div class="progress-group-bars">
@@ -240,27 +240,18 @@
                     />
                   </div>
                 </div>
-                <div class="legend text-center">
-                  <small>
-                    <sup><CBadge shape="pill" color="info">&nbsp;</CBadge></sup>
-                    New clients
-                    &nbsp;&nbsp;
-                    <sup><CBadge shape="pill" color="danger">&nbsp;</CBadge></sup>
-                    Recurring clients
-                  </small>
-                </div>
               </CCol>
               <CCol sm="12" lg="6">
                 <CRow>
                   <CCol sm="6">
                     <CCallout color="warning">
-                      <small class="text-muted">Pageviews</small><br>
+                      <small class="text-muted">Số lượt xem</small><br>
                       <strong class="h4">78,623</strong>
                     </CCallout>
                   </CCol>
                   <CCol sm="6">
                     <CCallout color="success">
-                      <small class="text-muted">Organic</small><br>
+                      <small class="text-muted">Lượt tìm kiếm</small><br>
                       <strong class="h4">49,123</strong>
                     </CCallout>
                   </CCol>
@@ -270,7 +261,7 @@
                   <div class="progress-group">
                     <div class="progress-group-header">
                       <CIcon name="cil-user" class="progress-group-icon"/>
-                      <span class="title">Male</span>
+                      <span class="title">Nam giới</span>
                       <span class="ml-auto font-weight-bold">43%</span>
                     </div>
                     <div class="progress-group-bars">
@@ -284,7 +275,7 @@
                   <div class="progress-group mb-5">
                     <div class="progress-group-header">
                       <CIcon name="cil-user-female" class="progress-group-icon"/>
-                      <span class="title">Female</span>
+                      <span class="title">Nữ giới</span>
                       <span class="ml-auto font-weight-bold">37%</span>
                     </div>
                     <div class="progress-group-bars">
@@ -298,7 +289,7 @@
                   <div class="progress-group">
                     <div class="progress-group-header">
                       <CIcon name="cil-globe-alt" class="progress-group-icon"/>
-                      <span class="title">Organic Search</span>
+                      <span class="title">Lượt tìm kiếm</span>
                       <span class="ml-auto font-weight-bold">
                         191,235 <span class="text-muted small">(56%)</span>
                       </span>
@@ -371,81 +362,9 @@
                       />
                     </div>
                   </div>
-                  <div class="divider text-center">
-                    <CButton color="link" size="sm" class="text-muted">
-                      <CIcon name="cil-options"/>
-                    </CButton>
-                  </div>
                 </ul>
               </CCol>
             </CRow>
-            <br/>
-            <CDataTable
-              class="mb-0 table-outline"
-              hover
-              :items="tableItems"
-              :fields="tableFields"
-              head-color="light"
-              no-sorting
-            >
-              <td slot="avatar" class="text-center" slot-scope="{item}">
-                <div class="c-avatar">
-                  <img :src="item.avatar.url" class="c-avatar-img" alt="">
-                  <span
-                    class="c-avatar-status"
-                    :class="`bg-${item.avatar.status || 'secondary'}`"
-                  ></span>
-                </div>
-              </td>
-              <td slot="user" slot-scope="{item}">
-                <div>{{item.user.name}}</div>
-                <div class="small text-muted">
-                  <span>
-                    <template v-if="item.user.new">New</template>
-                    <template v-else>Recurring</template>
-                  </span> | Registered: {{item.user.registered}}
-                </div>
-              </td>
-              <td
-                slot="country"
-                slot-scope="{item}"
-                class="text-center"
-              >
-                <CIcon
-                  :name="item.country.flag"
-                  height="25"
-                />
-              </td>
-              <td slot="usage" slot-scope="{item}">
-                <div class="clearfix">
-                  <div class="float-left">
-                    <strong>{{item.usage.value}}%</strong>
-                  </div>
-                  <div class="float-right">
-                    <small class="text-muted">{{item.usage.period}}</small>
-                  </div>
-                </div>
-                <CProgress
-                  class="progress-xs"
-                  v-model="item.usage.value"
-                  :color="color(item.usage.value)"
-                />
-              </td>
-              <td
-                slot="payment"
-                slot-scope="{item}"
-                class="text-center"
-              >
-                <CIcon
-                  :name="item.payment.icon"
-                  height="25"
-                />
-              </td>
-              <td slot="activity" slot-scope="{item}">
-                <div class="small text-muted">Last login</div>
-                <strong>{{item.activity}}</strong>
-              </td>
-            </CDataTable>
           </CCardBody>
         </CCard>
       </CCol>
@@ -457,7 +376,7 @@
 import MainChartExample from './charts/MainChartExample'
 import WidgetsDropdown from './widgets/WidgetsDropdown'
 import WidgetsBrand from './widgets/WidgetsBrand'
-
+import axios from "axios";
 export default {
   name: 'Dashboard',
   components: {
@@ -467,6 +386,7 @@ export default {
   },
   data () {
     return {
+      total_products: '',
       selected: 'Month',
       tableItems: [
         {
